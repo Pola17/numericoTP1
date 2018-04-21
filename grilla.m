@@ -1,8 +1,10 @@
 function resultado3 = grilla (n, t)
   
-  iterator = length(num2str(n));
+  longitud = length(num2str(n));
   
   new = n;
+  
+  iterator = longitud;
   
   if (iterator > t)
     toCut = n / str2num(factor(iterator - t));
@@ -14,6 +16,6 @@ function resultado3 = grilla (n, t)
   
   toFloat = new / str2num(fc);
 
-  resultado3 = cstrcat("Resultado: ", num2str(toFloat), " * 10^", num2str(iterator));
+  resultado3 = cstrcat("Resultado: ", num2str(toFloat), " * 10^", num2str(longitud));
   
 endfunction
