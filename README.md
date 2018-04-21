@@ -3,9 +3,9 @@ Git de la parte de Ocatave del primer trabajo práctico de análisis numérico (
 
 ## Integrantes
 
-Lucas de Aduriz
-Tomás Sabao
-Matías Berola
-Omar del Pino
+* Lucas de Aduriz
+* Tomás Sabao
+* Matías Berola
+* Omar del Pino
 
  
