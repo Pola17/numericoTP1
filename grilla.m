@@ -18,6 +18,9 @@ function resultado = grilla (parteEntera, parteDecimal, t)
   
   redondeado = redondear (n ,t);
   
-  resultado = cstrcat("0.", quitarCerosTraseros(redondeado), " * 10^", num2str(exp));
-  
+  if (str2num(redondeado) == 0)
+    resultado = cstrcat("0.1 * 10^", num2str(exp+1));
+  else
+    resultado = cstrcat("0.", quitarCerosTraseros(redondeado), " * 10^", num2str(exp));
+  endif
 endfunction
