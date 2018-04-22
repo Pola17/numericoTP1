@@ -1,18 +1,17 @@
-function resultado = grilla (n, t)
+function resultado = grilla (parteEntera, parteDecimal, t)
   
-  longitud = length(num2str(n));
+  #n = obtenerN (parteEntera, argn(2, :));
   
-  #number = argn(1, :);
+  n = obtenerN (quitarCeros(argn(1,:),"delanteros"), argn(2,:));
   
-  if (longitud > t)
-    aRedondear = n / divisor(longitud - t);
-    redondeado = round(aRedondear);
+  red = redondear (n ,t);
+  
+  if (parteEntera > 0)
+    exp = length(num2str(parteEntera));
   else
-    redondeado = n;
+    exp = length(num2str(parteDecimal)) - length(argn(2,:));
   endif
   
-  float = strcat("0.", num2str(redondeado));
-
-  resultado = cstrcat(float, " * 10^", num2str(longitud));
+  resultado = cstrcat("0.", quitarCeros(red, "todos"), " * 10^", num2str(exp));
   
 endfunction
