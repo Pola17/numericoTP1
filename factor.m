@@ -1,9 +1,11 @@
 function result = factor (iterator)
 
-  result = '1';
+  aux = '1';
 
   for i = 1:iterator
-    result = strcat(result, '0');
+    aux = strcat(aux, '0');
   endfor  
+  
+  result = str2num(aux);
   
 endfunction

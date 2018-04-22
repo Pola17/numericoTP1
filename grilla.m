@@ -2,20 +2,17 @@ function resultado3 = grilla (n, t)
   
   longitud = length(num2str(n));
   
-  new = n;
-  
-  iterator = longitud;
-  
-  if (iterator > t)
-    toCut = n / str2num(factor(iterator - t));
-    new = round(toCut);
+  if (longitud > t)
+    aRedondear = n / factor(longitud - t);
+    redondeado = round(aRedondear);
     iterator = t;
+  else
+    redondeado = n;
+    iterator = longitud;
   endif
- 
-  fc = factor(iterator);
   
-  toFloat = new / str2num(fc);
+  float = strcat("0.", num2str(redondeado));
 
-  resultado3 = cstrcat("Resultado: ", num2str(toFloat), " * 10^", num2str(longitud));
+  resultado3 = cstrcat(float, " * 10^", num2str(longitud));
   
 endfunction
