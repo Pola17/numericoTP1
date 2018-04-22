@@ -4,17 +4,20 @@ function resultado = grilla (parteEntera, parteDecimal, t)
   trimParteDecimal = strtrim(argn(2,:));
   
   if (parteEntera > 0)
-    sinCerosAdelante = quitarCeros(trimParteEntera,"delanteros");
+    sinCerosAdelante = quitarCerosDelanteros(trimParteEntera);   
     exp = length(sinCerosAdelante);
     n = obtenerN (sinCerosAdelante, trimParteDecimal);
-  else
-    sinCerosAdelante = quitarCeros(trimParteDecimal,"delanteros");
+  elseif (parteDecimal > 0)
+    sinCerosAdelante = quitarCerosDelanteros(trimParteDecimal);
     exp = length(sinCerosAdelante) - length(trimParteDecimal);
     n = sinCerosAdelante;
+  else
+    resultado = "0";
+    return;
   endif
   
-  red = redondear (n ,t);
+  redondeado = redondear (n ,t);
   
-  resultado = cstrcat("0.", quitarCeros(red,"todos"), " * 10^", num2str(exp));
+  resultado = cstrcat("0.", quitarCerosTraseros(redondeado), " * 10^", num2str(exp));
   
 endfunction

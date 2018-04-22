@@ -19,11 +19,7 @@ function sinCeros = quitarCeros (numeroConCeros, condicion)
     cerosFin++;
     i--;  
   endwhile
-  
-#  if (x == cerosInicio)
-#    sinCeros = "0";
-#  else
-    sinCeros = substr (numeroConCeros, 1+cerosInicio, length(numeroConCeros)-cerosFin-cerosInicio );  
-#  endif
+
+  sinCeros = substr (numeroConCeros, 1+cerosInicio, length(numeroConCeros)-cerosFin-cerosInicio );  
 
 endfunction
