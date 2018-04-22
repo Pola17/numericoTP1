@@ -1,18 +1,18 @@
-function resultado3 = grilla (n, t)
+function resultado = grilla (n, t)
   
   longitud = length(num2str(n));
   
+  #number = argn(1, :);
+  
   if (longitud > t)
-    aRedondear = n / factor(longitud - t);
+    aRedondear = n / divisor(longitud - t);
     redondeado = round(aRedondear);
-    iterator = t;
   else
     redondeado = n;
-    iterator = longitud;
   endif
   
   float = strcat("0.", num2str(redondeado));
 
-  resultado3 = cstrcat(float, " * 10^", num2str(longitud));
+  resultado = cstrcat(float, " * 10^", num2str(longitud));
   
 endfunction

@@ -1,4 +1,4 @@
-function result = factor (iterator)
+function result = divisor (iterator)
 
   aux = '1';
 
