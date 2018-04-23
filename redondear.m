@@ -7,6 +7,8 @@ function redondeado = redondear (numero, precision)
     aux = strtrunc (numero, precision);
     if (digitoTruncado >= 5)
       redondeado = sumar(aux);
+    else
+      redondeado = aux;
     endif
   endif
 
