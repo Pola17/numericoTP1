@@ -4,8 +4,8 @@
 function resultado = grilla (n,t)
   
   if (isnumeric(n))
-    # TODO t<=2 rompe el formato
-    trimN = num2str(n,t);
+    # TODO revisar la precision elegida
+    trimN = num2str(n,15);
     #disp(trimN)
   else
     #es string

@@ -4,15 +4,16 @@
 #TODO refactor
 function r = raices (a,b,c,t)
   
-  #format long;
+  #para poner la precision en 15
+  format long;
   
   grDeA = grilla(a,t);
   grDeB = grilla(b,t);
   grDeC = grilla(c,t);
-  
+
   nDeGrDeA = aNumero(grDeA);
   nDeGrDeB = aNumero(grDeB);
-  nDeGrDeC = aNumero(grDeC);
+  nDeGrDeC = aNumero(grDeC);  
   
   terminoUno = grilla(nDeGrDeB^2,t);
   terminoDos = grilla(4*nDeGrDeA*nDeGrDeC,t);
