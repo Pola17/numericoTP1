@@ -4,6 +4,8 @@
 #TODO refactor
 function r = raices (a,b,c,t)
   
+  #format long;
+  
   grDeA = grilla(a,t);
   grDeB = grilla(b,t);
   grDeC = grilla(c,t);

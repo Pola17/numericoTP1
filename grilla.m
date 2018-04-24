@@ -4,10 +4,12 @@
 function resultado = grilla (n,t)
   
   if (isnumeric(n))
-    trimN = num2str(n);
+    # TODO t<=2 rompe el formato
+    trimN = num2str(n,t);
+    #disp(trimN)
   else
-    aux = strtrim(argn(1,:));
-    trimN = substr(aux,2,length(aux)-1);
+    #es string
+    trimN = n;
   endif
   
   if (trimN(1)=="-")
