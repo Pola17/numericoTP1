@@ -1,9 +1,28 @@
+#si n es un numero sirve hasta el maximo que tolera octave sin romper el formato
+#si n es un string sirve para cualquier numero
+#t es un numero
 function resultado = grilla (n,t)
   
-  trimN = strtrim(argn(1,:));
+  if (isnumeric(n))
+    trimN = num2str(n);
+  else
+    aux = strtrim(argn(1,:));
+    trimN = substr(aux,2,length(aux)-1);
+  endif
   
-  numero = strsplit (trimN, ".");
+  if (trimN(1)=="-")
+    signo = "-";
+    trimN = substr(trimN,2);
+  else
+    signo = "";
+  endif
+
+  numero = strsplit(trimN, ".");
   
-  resultado = gr (numero{1}, numero{2}, t);
+  if (size(numero) == 1)
+    resultado = cstrcat(signo, gr (numero{1}, "0", t));
+  else  
+    resultado = cstrcat(signo, gr (numero{1}, numero{2}, t));
+  endif
   
 endfunction

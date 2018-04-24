@@ -1,5 +1,5 @@
+#redondeo simetrico
 function redondeado = redondear (numero, precision)
-
   if (precision >= length(numero))
     redondeado = numero;
   else
@@ -11,9 +11,9 @@ function redondeado = redondear (numero, precision)
       redondeado = aux;
     endif
   endif
-
 endfunction
 
+#suma uno al ultimo digito y en caso de hacer falta sigue sumando en cascada
 function result = sumar (numero)
   
   longitud = length(numero);
