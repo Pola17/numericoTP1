@@ -32,7 +32,7 @@ function r = raices (a,b,c,t)
     return;
   endif  
   
-  grDeRaiz = grilla(sqrt(nTerminoUno - nTerminoDos),t);
+  grDeRaiz = grilla(sqrt(resta),t);
   
   nGrDeRaiz = aNumero(grDeRaiz);
   
