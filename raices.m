@@ -44,7 +44,18 @@ function r = raices (a,b,c,t)
   r1 = x1(nDeGrDeB, nGrDeRaiz, nDosA);
   r2 = x2(nDeGrDeB, nGrDeRaiz, nDosA);
  
-  r = cstrcat("x1=",num2str(r1),"  x2=",num2str(r2));
+  if (r1 > 1)
+    r1 = num2str(r1, t);
+  else
+    r1 = num2str(r1);
+  endif
+  if (r2 > 1)
+    r2 = num2str(r2, t);
+  else
+    r2 = num2str(r2);
+  endif
+  
+  r = cstrcat("x1=",r1,"  x2=",r2);
 
 endfunction
 
@@ -81,7 +92,7 @@ endfunction
 function r2 = x2(terminoB, terminoRaiz, divisor)
 
   dividendo = - terminoB + terminoRaiz;
-  
+
   #necesario porque octave puede devolver -0 como funcion
   if (dividendo == 0) 
     r2 = 0;
