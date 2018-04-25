@@ -48,3 +48,39 @@ function n = obtenerN (parteEntera, parteDecimal)
     n = parteEntera;
   endif
 endfunction
+
+
+function sinCerosAtras = quitarCerosTraseros (numeroConCeros)
+  
+  cerosFin = 0;
+  longitud = length(numeroConCeros);
+  i = longitud;
+  
+  while (numeroConCeros(i) == '0')
+    cerosFin++;
+    i--;  
+  endwhile
+
+  sinCerosAtras = substr (numeroConCeros, 1, length(numeroConCeros)-cerosFin);  
+
+endfunction
+
+
+function sinCerosAdelante = quitarCerosDelanteros (numeroConCeros)
+  
+  i = 1;
+  cerosInicio = 0;
+  longitud = length(numeroConCeros);
+  
+  while (numeroConCeros(i) == '0')
+    cerosInicio++;
+    if (longitud == cerosInicio)
+      sinCerosAdelante = "";
+      return;
+    endif;
+    i++;  
+  endwhile
+
+  sinCerosAdelante = substr (numeroConCeros, 1+cerosInicio);  
+
+endfunction
