@@ -1,9 +1,10 @@
 #devuelve las raices
 #octave muestra los numeros menores a 1 en notacion cientifica
-#TODO refactor
 function r = raices (a,b,c,t)
   
   #para poner la precision en 15
+  #15 es lo maximo que tolera octave para operar
+  #sin perder precision
   format long;
 
   if(a==0)
