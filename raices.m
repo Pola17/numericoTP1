@@ -1,11 +1,15 @@
 #devuelve las raices
-#TODO devuelve algunos numeros con exponenciales (revisar si no esta resuelto)
-#TODO agregar chequeos a!=0 y b^2-4ac>0
+#octave muestra los numeros menores a 1 en notacion cientifica
 #TODO refactor
 function r = raices (a,b,c,t)
   
   #para poner la precision en 15
   format long;
+
+  if(a==0)
+    r = "'a' debe ser distinto a cero";
+    return;
+  endif
   
   grDeA = grilla(a,t);
   grDeB = grilla(b,t);
@@ -23,6 +27,11 @@ function r = raices (a,b,c,t)
   
   resta = nTerminoUno - nTerminoDos;
   
+  if (resta < 0)
+    r = "'b^2-4ac' debe ser mayor a cero";
+    return;
+  endif  
+  
   grDeRaiz = grilla(sqrt(nTerminoUno - nTerminoDos),t);
   
   nGrDeRaiz = aNumero(grDeRaiz);
@@ -30,7 +39,7 @@ function r = raices (a,b,c,t)
   dosA = grilla(2*nDeGrDeA,t);
   
   nDosA = aNumero(dosA);
-  
+ 
   r1 = x1(nDeGrDeB, nGrDeRaiz, nDosA);
   r2 = x2(nDeGrDeB, nGrDeRaiz, nDosA);
  
@@ -62,7 +71,7 @@ function r1 = x1(terminoB, terminoRaiz, divisor)
   if (dividendo == 0) 
     r1 = 0;
   else
-    r1 = dividendo/divisor;  
+    r1 = dividendo/divisor;
   endif
   
 endfunction

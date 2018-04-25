@@ -4,9 +4,8 @@
 function resultado = grilla (n,t)
   
   if (isnumeric(n))
-    # TODO revisar la precision elegida
+    # precision de long
     trimN = num2str(n,15);
-    #disp(trimN)
   else
     #es string
     trimN = n;
